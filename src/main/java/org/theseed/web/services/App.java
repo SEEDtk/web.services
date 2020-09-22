@@ -20,8 +20,8 @@ public class App
         WebProcessor processor;
         // Determine the command to process.
         switch (command) {
-        case "parse" :
-            processor = new ParseProcessor();
+        case "showMap" :
+            processor = new ShowMapProcessor();
             break;
         default:
             throw new RuntimeException("Invalid command " + command);
