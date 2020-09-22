@@ -5,13 +5,10 @@ package org.theseed.web.services;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -140,10 +137,9 @@ public class ShowMapProcessor extends WebProcessor {
             String coreFunDesc = this.funMap.getName(funCounter.getMappedFunction());
             String patFunDesc = this.funMap.getName(patFunId);
             // Turn the core function into a search link.
-            String pattern = URLEncoder.encode(Pattern.quote(coreFunDesc), StandardCharsets.UTF_8.toString());
-            String coreFunUrl = this.getPageWriter().local_url("/blast.cgi/search?workspace=" + this.getWorkSpace() + ";regex=" + pattern);
+            DomContent roleSearch = roleSearchLink(coreFunDesc);
             int count = funCounter.getCount();
-            tableOut.new Row(Key.NONE).add(a(coreFunDesc).withHref(coreFunUrl)).add(patFunDesc).add(count);
+            tableOut.new Row(Key.NONE).add(roleSearch).add(patFunDesc).add(count);
         }
         DomContent tableDiv = this.getPageWriter().highlightBlock(tableOut.output());
         DomContent legend = p("Each PATRIC function is mapped to a single CoreSEED function.  The count indicates the number of times " +
@@ -151,4 +147,5 @@ public class ShowMapProcessor extends WebProcessor {
                 "to search for CoreSEED features containing the specified function.");
         this.getPageWriter().writePage("Function Mapping", h1("Function Mapping"), legend, tableDiv);
     }
+
 }

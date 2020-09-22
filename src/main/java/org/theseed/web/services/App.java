@@ -23,6 +23,9 @@ public class App
         case "showMap" :
             processor = new ShowMapProcessor();
             break;
+        case "subsystems" :
+            processor = new SubsystemRoleProcessor();
+            break;
         default:
             throw new RuntimeException("Invalid command " + command);
         }
