@@ -17,11 +17,11 @@ import org.theseed.counters.CountMap;
 import org.theseed.io.TabbedLineReader;
 import org.theseed.proteins.Function;
 import org.theseed.proteins.FunctionMap;
-import org.theseed.reports.ColSpec;
-import org.theseed.reports.HtmlTable;
-import org.theseed.reports.Key;
 import org.theseed.utils.FunctionCounter;
+import org.theseed.web.ColSpec;
 import org.theseed.web.CookieFile;
+import org.theseed.web.HtmlTable;
+import org.theseed.web.Key;
 import org.theseed.web.WebProcessor;
 
 import j2html.tags.DomContent;

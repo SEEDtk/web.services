@@ -13,15 +13,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.theseed.proteins.Function;
 import org.theseed.proteins.FunctionMap;
-import org.theseed.reports.ColSpec;
 import org.theseed.reports.CoreHtmlUtilities;
-import org.theseed.reports.HtmlTable;
-import org.theseed.reports.Key;
 import org.theseed.subsystems.CellData;
 import org.theseed.subsystems.RowData;
 import org.theseed.subsystems.SubsystemData;
 import org.theseed.subsystems.SubsystemFilter;
+import org.theseed.web.ColSpec;
 import org.theseed.web.CookieFile;
+import org.theseed.web.HtmlTable;
+import org.theseed.web.Key;
 import org.theseed.web.WebProcessor;
 
 import j2html.tags.DomContent;
