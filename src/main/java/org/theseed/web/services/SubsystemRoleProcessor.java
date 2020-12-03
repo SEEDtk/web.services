@@ -22,6 +22,7 @@ import org.theseed.web.ColSpec;
 import org.theseed.web.CookieFile;
 import org.theseed.web.HtmlTable;
 import org.theseed.web.Key;
+import org.theseed.web.Row;
 import org.theseed.web.WebProcessor;
 
 import j2html.tags.DomContent;
@@ -108,7 +109,7 @@ public class SubsystemRoleProcessor extends WebProcessor {
             String roleDesc = this.funMap.getName(roleSub.getKey());
             DomContent roleLink = this.roleSearchLink(roleDesc);
             DomContent subList = CoreHtmlUtilities.subsystemList(roleSub.getValue());
-            roleTable.new Row(new Key.Text(roleDesc)).add(roleLink).add(subList);
+            new Row<Key.Text>(roleTable, new Key.Text(roleDesc)).add(roleLink).add(subList);
         }
         // Format the web page.
         DomContent tableDiv = this.getPageWriter().highlightBlock(roleTable.output());

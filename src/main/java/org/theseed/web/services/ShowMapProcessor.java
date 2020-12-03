@@ -22,6 +22,7 @@ import org.theseed.web.ColSpec;
 import org.theseed.web.CookieFile;
 import org.theseed.web.HtmlTable;
 import org.theseed.web.Key;
+import org.theseed.web.Row;
 import org.theseed.web.WebProcessor;
 
 import j2html.tags.DomContent;
@@ -139,7 +140,7 @@ public class ShowMapProcessor extends WebProcessor {
             // Turn the core function into a search link.
             DomContent roleSearch = roleSearchLink(coreFunDesc);
             int count = funCounter.getCount();
-            tableOut.new Row(Key.NONE).add(roleSearch).add(patFunDesc).add(count);
+            new Row<Key.Null>(tableOut, Key.NONE).add(roleSearch).add(patFunDesc).add(count);
         }
         DomContent tableDiv = this.getPageWriter().highlightBlock(tableOut.output());
         DomContent legend = p("Each PATRIC function is mapped to a single CoreSEED function.  The count indicates the number of times " +
