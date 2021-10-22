@@ -7,7 +7,8 @@ import org.theseed.web.WebProcessor;
 /**
  * Commands for General website utilities.
  *
- * parse	display a page of markdown text
+ * showMap		show the mapping between CoreSEED and PATRIC functions
+ * subsystems	display the roles in subsystems.
  *
  */
 public class App
